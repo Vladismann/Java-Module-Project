@@ -3,7 +3,10 @@ import java.util.ArrayList;
 public class Race {
 
     public String getRaceWinnerCarName(ArrayList<Car> cars) {
-        Car actualWinnerCar = new Car();
+        if (cars.isEmpty()) {
+            return null;
+        }
+        Car actualWinnerCar = null;
         int maxKilometers = 0;
         int actualKilometers;
 
@@ -15,6 +18,6 @@ public class Race {
             }
         }
 
-        return actualWinnerCar.name;
+        return actualWinnerCar != null ? actualWinnerCar.name : null;
     }
 }

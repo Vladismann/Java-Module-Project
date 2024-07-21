@@ -16,12 +16,14 @@ public class Main {
             int actualSpeed;
             while (true) {
                 System.out.printf("Введите скорость машины №%d:%n", i);
-                actualSpeed = scanner.nextInt();
-                if (actualSpeed >= 0 && actualSpeed <= 250) {
-                    break;
-                } else {
-                    System.out.printf("Укажите скорость машины №%d в диапозоне 0 до 250%n", i);
+                String inputSpeed = scanner.next().replaceAll("[^\\d.]", "");
+                if (!inputSpeed.isBlank()) {
+                    actualSpeed = Integer.parseInt(inputSpeed);
+                    if (actualSpeed >= 0 && actualSpeed <= 250) {
+                        break;
+                    }
                 }
+                System.out.printf("Укажите скорость машины №%d в диапозоне 0 до 250%n", i);
             }
             cars.add(new Car(carName, actualSpeed));
         }
