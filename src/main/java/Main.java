@@ -16,7 +16,7 @@ public class Main {
             int actualSpeed;
             while (true) {
                 System.out.printf("Введите скорость машины №%d:%n", i);
-                String inputSpeed = scanner.next().replaceAll("[^\\d.]", "");
+                String inputSpeed = scanner.next().replaceAll("[^\\d-]", "");
                 if (!inputSpeed.isBlank()) {
                     actualSpeed = Integer.parseInt(inputSpeed);
                     if (actualSpeed >= 0 && actualSpeed <= 250) {
