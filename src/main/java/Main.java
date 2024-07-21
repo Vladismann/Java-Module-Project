@@ -20,12 +20,11 @@ public class Main {
                 if (actualSpeed >= 0 && actualSpeed <= 250) {
                     break;
                 } else {
-                    System.out.printf("Введите скорость машины №%d в диапозоне 0 до 250%n", i);
+                    System.out.printf("Укажите скорость машины №%d в диапозоне 0 до 250%n", i);
                 }
             }
             cars.add(new Car(carName, actualSpeed));
         }
-        race.getRaceWinnerCarName(cars);
         System.out.println("Самая быстрая машина: " + race.getRaceWinnerCarName(cars));
     }
 }
