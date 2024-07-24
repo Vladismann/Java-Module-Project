@@ -16,9 +16,9 @@ public class Main {
             int actualSpeed;
             while (true) {
                 System.out.printf("Введите скорость машины №%d:%n", i);
-                String inputSpeed = scanner.next().replaceAll("[^\\d-]", "");
-                if (!inputSpeed.isBlank()) {
-                    actualSpeed = Integer.parseInt(inputSpeed);
+                scanner.nextLine();
+                if (scanner.hasNextInt()) {
+                    actualSpeed = scanner.nextInt();
                     if (actualSpeed >= 0 && actualSpeed <= 250) {
                         break;
                     }
@@ -27,6 +27,7 @@ public class Main {
             }
             cars.add(new Car(carName, actualSpeed));
         }
+        scanner.close();
         System.out.println("Самая быстрая машина: " + race.getRaceWinnerCarName(cars));
     }
 }
