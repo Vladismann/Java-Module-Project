@@ -15,15 +15,17 @@ public class Main {
 
             int actualSpeed;
             while (true) {
-                System.out.printf("Введите скорость машины №%d:%n", i);
-                scanner.nextLine();
+                System.out.printf("Укажите число для скорости машины №%d от 0 до 250:%n", i);
                 if (scanner.hasNextInt()) {
                     actualSpeed = scanner.nextInt();
                     if (actualSpeed >= 0 && actualSpeed <= 250) {
                         break;
                     }
+                } else {
+                    System.out.println("Некорректный ввод.");
+                    scanner.next();
+
                 }
-                System.out.printf("Укажите скорость машины №%d в диапозоне 0 до 250%n", i);
             }
             cars.add(new Car(carName, actualSpeed));
         }
